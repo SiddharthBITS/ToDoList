@@ -1,10 +1,14 @@
 package com.example.appdev2;
 
 import android.content.ContentValues;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
 import android.os.Bundle;
+
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         String name = m_task.getText().toString();
         ContentValues cv = new ContentValues();
-        cv.put(Database.Entry.COLUMN_NAME, name);
+        cv.put(Database.Entry.COLUMN_TASK, name);
         m_database.insert(Database.Entry.TABLE_NAME, null, cv);
         m_adapter.swapCursor(getTasks());
         m_task.getText().clear();

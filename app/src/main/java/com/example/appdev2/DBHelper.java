@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_TASKSLIST_TABLE = "CREATE TABLE " +
                 Entry.TABLE_NAME + " (" +
                 Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                Entry.COLUMN_NAME + " TEXT NOT NULL, " +
+                Entry.COLUMN_TASK + " TEXT NOT NULL, " +
                 Entry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
 

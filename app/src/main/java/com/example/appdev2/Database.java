@@ -9,7 +9,7 @@ public class Database {
 
     public static final class Entry implements BaseColumns {
         public static final String TABLE_NAME = "taskslist";
-        public static final String COLUMN_NAME = "task";
+        public static final String COLUMN_TASK = "task";
         public static final String COLUMN_TIMESTAMP = "timestamp";
     }
 }

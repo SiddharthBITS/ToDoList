@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.TextView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
@@ -21,14 +22,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         a_cursor = cursor;
 
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView task;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View taskView) {
 
-            super(itemView);
-            task = itemView.findViewById(R.id.task_card);
+            super(taskView);
+            task = taskView.findViewById(R.id.task_card);
         }
     }
 
@@ -36,7 +38,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(a_context);
-        View view = inflater.inflate(R.layout.item, parent, false);
+        View view = inflater.inflate(R.layout.task, parent, false);
         return new ViewHolder(view);
 
     }
@@ -47,7 +49,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             return;
         }
 
-        String name = a_cursor.getString(a_cursor.getColumnIndex(Database.Entry.COLUMN_NAME));
+        String name = a_cursor.getString(a_cursor.getColumnIndex(Database.Entry.COLUMN_TASK));
         long id = a_cursor.getLong(a_cursor.getColumnIndex(Database.Entry._ID));
 
         holder.task.setText(name);
